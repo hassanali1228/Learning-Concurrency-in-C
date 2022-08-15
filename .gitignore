@@ -1,0 +1,53 @@
+#LaTex generated files
+
+**/*.aux
+**/*.blg
+**/*.brf
+**/*.dvi
+**/*.lof
+**/*.log
+**/*.lot
+**/*.synctex.gz
+**/*.toc
+
+#dependencies
+**/*.d
+
+# Object files
+**/*.o
+
+# Libraries
+**/*.lib
+**/*.a
+
+# Shared objects (inc. Windows DLLs)
+**/*.dll
+**/*.so
+**/*.so.*
+**/*.dylib
+
+# Executables
+**/*.exe
+**/*.out
+**/*.app
+
+# backup from from editor
+**/*~
+**/#**#
+
+# emacs intermediate files
+**/*.el
+
+# flymd intermediate files
+**/flymd.*
+
+# Mac Files
+**/.DS_Store
+
+#project files
+paster2
+paster
+pastersingle
+catpng
+findpng
+pnginfo

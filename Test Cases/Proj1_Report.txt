@@ -1,0 +1,249 @@
+########### Setting Up Directory  ###########
+########### Running Tests  ###########
+>> make all
+pnginfo compiled +2
+findpng compiled +2
+catpng compiled +2
+Any *.out renamed to *
+
+>> ./pnginfo images/WEEF_1.png
+Got: 
+images/WEEF_1.png: 450 x 229
+Expected: 
+images/WEEF_1.png: 450 x 229
+correct +3
+
+>> ./pnginfo images/Disguise.png
+Got: 
+images/Disguise.png: Not a PNG file
+Expected: 
+images/Disguise.png: Not a PNG file
+correct +3
+
+>> ./pnginfo images/AnotherDisguise.png
+Got: 
+images/AnotherDisguise.png: Not a PNG file
+Expected: 
+images/AnotherDisguise.png: Not a PNG file
+correct +2
+
+>> ./pnginfo images/red-green-16x16.png
+Got: 
+images/red-green-16x16.png: 16 x 16
+Expected: 
+red-green-16x16.png: 16 x 16
+correct +3
+
+>> ./pnginfo images/red-green-16x16-corrupted.png
+Got: 
+images/red-green-16x16-corrupted.png: 16 x 16
+IDAT chunk CRC error: computed 34324f1e, expected dc5f7b84
+Expected: 
+IDAT chunk CRC error: computed 34324f1e, expected dc5f7b84
+correct +4
+
+
+>> ./findpng images/empty
+Got: 
+findpng: No PNG file found
+Expected: 
+No PNG file found
+correct +5
+
+>> ./findpng .
+Got: 
+./images/cropped/pic_cropped_0.png
+./images/cropped/pic_cropped_1.png
+./images/cropped/pic_cropped_2.png
+./images/cropped/pic_cropped_3.png
+./images/cropped/pic_cropped_4.png
+./images/images/cropped/pic_cropped_0.png
+./images/images/cropped/pic_cropped_1.png
+./images/images/cropped/pic_cropped_2.png
+./images/images/cropped/pic_cropped_3.png
+./images/images/cropped/pic_cropped_4.png
+./images/images/red-green-16x16-corrupted.png
+./images/images/red-green-16x16.png
+./images/images/uweng_cropped/uweng_cropped_0.png
+./images/images/uweng_cropped/uweng_cropped_1.png
+./images/images/uweng_cropped/uweng_cropped_2.png
+./images/images/uweng_cropped/uweng_cropped_3.png
+./images/images/uweng_cropped/uweng_cropped_4.png
+./images/images/uweng_cropped/uweng_cropped_5.png
+./images/images/uweng_cropped/uweng_cropped_6.png
+./images/images/uweng.png
+./images/images/WEEF_1.png
+./images/long_uweng.png
+./images/red-green-16x16-corrupted.png
+./images/red-green-16x16.png
+./images/red-green-16x32.png
+./images/uweng_cropped/uweng_cropped_0.png
+./images/uweng_cropped/uweng_cropped_1.png
+./images/uweng_cropped/uweng_cropped_2.png
+./images/uweng_cropped/uweng_cropped_3.png
+./images/uweng_cropped/uweng_cropped_4.png
+./images/uweng_cropped/uweng_cropped_5.png
+./images/uweng_cropped/uweng_cropped_6.png
+./images/uweng.png
+./images/WEEF_1.png
+./red-green-16x32.png
+./uweng.png
+Expected: 
+./images/cropped/pic_cropped_0.png
+./images/cropped/pic_cropped_1.png
+./images/cropped/pic_cropped_2.png
+./images/cropped/pic_cropped_3.png
+./images/cropped/pic_cropped_4.png
+./images/images/cropped/pic_cropped_0.png
+./images/images/cropped/pic_cropped_1.png
+./images/images/cropped/pic_cropped_2.png
+./images/images/cropped/pic_cropped_3.png
+./images/images/cropped/pic_cropped_4.png
+./images/images/red-green-16x16-corrupted.png
+./images/images/red-green-16x16.png
+./images/images/uweng_cropped/uweng_cropped_0.png
+./images/images/uweng_cropped/uweng_cropped_1.png
+./images/images/uweng_cropped/uweng_cropped_2.png
+./images/images/uweng_cropped/uweng_cropped_3.png
+./images/images/uweng_cropped/uweng_cropped_4.png
+./images/images/uweng_cropped/uweng_cropped_5.png
+./images/images/uweng_cropped/uweng_cropped_6.png
+./images/images/uweng.png
+./images/images/WEEF_1.png
+./images/long_uweng.png
+./images/red-green-16x16-corrupted.png
+./images/red-green-16x16.png
+./images/red-green-16x32.png
+./images/uweng_cropped/uweng_cropped_0.png
+./images/uweng_cropped/uweng_cropped_1.png
+./images/uweng_cropped/uweng_cropped_2.png
+./images/uweng_cropped/uweng_cropped_3.png
+./images/uweng_cropped/uweng_cropped_4.png
+./images/uweng_cropped/uweng_cropped_5.png
+./images/uweng_cropped/uweng_cropped_6.png
+./images/uweng.png
+./images/WEEF_1.png
+./red-green-16x32.png
+./uweng.png
+correct +10
+>> ./findpng images
+Got: 
+images/cropped/pic_cropped_0.png
+images/cropped/pic_cropped_1.png
+images/cropped/pic_cropped_2.png
+images/cropped/pic_cropped_3.png
+images/cropped/pic_cropped_4.png
+images/images/cropped/pic_cropped_0.png
+images/images/cropped/pic_cropped_1.png
+images/images/cropped/pic_cropped_2.png
+images/images/cropped/pic_cropped_3.png
+images/images/cropped/pic_cropped_4.png
+images/images/red-green-16x16-corrupted.png
+images/images/red-green-16x16.png
+images/images/uweng_cropped/uweng_cropped_0.png
+images/images/uweng_cropped/uweng_cropped_1.png
+images/images/uweng_cropped/uweng_cropped_2.png
+images/images/uweng_cropped/uweng_cropped_3.png
+images/images/uweng_cropped/uweng_cropped_4.png
+images/images/uweng_cropped/uweng_cropped_5.png
+images/images/uweng_cropped/uweng_cropped_6.png
+images/images/uweng.png
+images/images/WEEF_1.png
+images/long_uweng.png
+images/red-green-16x16-corrupted.png
+images/red-green-16x16.png
+images/red-green-16x32.png
+images/uweng_cropped/uweng_cropped_0.png
+images/uweng_cropped/uweng_cropped_1.png
+images/uweng_cropped/uweng_cropped_2.png
+images/uweng_cropped/uweng_cropped_3.png
+images/uweng_cropped/uweng_cropped_4.png
+images/uweng_cropped/uweng_cropped_5.png
+images/uweng_cropped/uweng_cropped_6.png
+images/uweng.png
+images/WEEF_1.png
+Expected: 
+images/cropped/pic_cropped_0.png
+images/cropped/pic_cropped_1.png
+images/cropped/pic_cropped_2.png
+images/cropped/pic_cropped_3.png
+images/cropped/pic_cropped_4.png
+images/images/cropped/pic_cropped_0.png
+images/images/cropped/pic_cropped_1.png
+images/images/cropped/pic_cropped_2.png
+images/images/cropped/pic_cropped_3.png
+images/images/cropped/pic_cropped_4.png
+images/images/red-green-16x16-corrupted.png
+images/images/red-green-16x16.png
+images/images/uweng_cropped/uweng_cropped_0.png
+images/images/uweng_cropped/uweng_cropped_1.png
+images/images/uweng_cropped/uweng_cropped_2.png
+images/images/uweng_cropped/uweng_cropped_3.png
+images/images/uweng_cropped/uweng_cropped_4.png
+images/images/uweng_cropped/uweng_cropped_5.png
+images/images/uweng_cropped/uweng_cropped_6.png
+images/images/uweng.png
+images/images/WEEF_1.png
+images/long_uweng.png
+images/red-green-16x16-corrupted.png
+images/red-green-16x16.png
+images/red-green-16x32.png
+images/uweng_cropped/uweng_cropped_0.png
+images/uweng_cropped/uweng_cropped_1.png
+images/uweng_cropped/uweng_cropped_2.png
+images/uweng_cropped/uweng_cropped_3.png
+images/uweng_cropped/uweng_cropped_4.png
+images/uweng_cropped/uweng_cropped_5.png
+images/uweng_cropped/uweng_cropped_6.png
+images/uweng.png
+images/WEEF_1.png
+correct +10
+
+>> ./findpng images/cropped
+Got: 
+images/cropped/pic_cropped_0.png
+images/cropped/pic_cropped_1.png
+images/cropped/pic_cropped_2.png
+images/cropped/pic_cropped_3.png
+images/cropped/pic_cropped_4.png
+Expected: 
+images/cropped/pic_cropped_0.png
+images/cropped/pic_cropped_1.png
+images/cropped/pic_cropped_2.png
+images/cropped/pic_cropped_3.png
+images/cropped/pic_cropped_4.png
+correct +5
+
+
+>> ./catpng on strips of WEEF_1.png
+correct +8
+
+>> ./pnginfo all.png
+Got: 
+all.png: 450 x 229 
+Dimensions correct +8
+No crc errors +7
+
+>> ./catpng on strips of uweng_cropped
+correct +7
+
+>> ./pnginfo all.png
+Got: 
+all.png: 1000 x 262 
+Dimensions correct +8
+No crc errors +7
+
+
+>> make clean
+No .o found +2
+No .d found
+No executable found +2
+
+########### Score ###########
+Makefile score: 10/10
+pnginfo score: 15/15
+findpng score: 30/30
+catpng score: 45/45
+Total lab 1 score:  100/100
+
+########### Additional Comments ###########

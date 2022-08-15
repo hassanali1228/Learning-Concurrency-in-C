@@ -1,0 +1,256 @@
+########### Setting Up Directory  ###########
+Removing all .pngs, .o, .d and executables
+########### Running Tests  ###########
+>> make
+paster2 compiled +6
+Any *.out renamed to *
+
+evaluating P = 1, C = 1
+
+>> ./paster2 5 1 1 1 1
+Program completed successfully
+Process finished after 10 seconds
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors +1
+images pass absolute error test +1
+
+Number of requests detected: 50
+Expected: 50
+correct +3
+
+Number of processes detected: 3
+Expected: 3
+correct +3
+
+>> ./paster2 5 1 1 1 2
+Program completed successfully
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors
+images pass absolute error test +1
+
+>> ./paster2 5 1 1 1 3
+Program completed successfully
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors
+images pass absolute error test +1
+evaluating P > 1, C > 1
+
+>> ./paster2 5 5 5 1 1
+Program completed successfully
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors +1
+images pass absolute error test +1
+
+Number of requests detected: 50
+Expected: 50
+correct +2
+
+Number of processes detected: 11
+Expected: 11
+correct +2
+
+>> ./paster2 5 5 10 1 1
+Program completed successfully
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors +1
+images pass absolute error test +1
+
+Number of requests detected: 50
+Expected: 50
+correct +2
+
+Number of processes detected: 16
+Expected: 16
+correct +2
+
+>> ./paster2 5 10 5 1 1
+Program completed successfully
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors +1
+images pass absolute error test +1
+
+Number of requests detected: 50
+Expected: 50
+correct +2
+
+Number of processes detected: 16
+Expected: 16
+correct +2
+
+>> ./paster2 5 10 10 1 1
+Program completed successfully
+
+>> ./pnginfo all.png
+Got: 
+all.png: 400 x 300 
+Dimensions correct +1
+No crc errors +1
+images pass absolute error test +1
+
+Number of requests detected: 50
+Expected: 50
+correct +2
+
+Number of processes detected: 21
+Expected: 21
+correct +2
+
+Confirming paster works with all combinations
+B5_P1_C1_X0_N1.dat
+B5_P1_C5_X0_N1.dat
+B5_P5_C1_X0_N1.dat
+B5_P5_C5_X0_N1.dat
+B10_P1_C1_X0_N1.dat
+B10_P1_C5_X0_N1.dat
+B10_P1_C10_X0_N1.dat
+B10_P5_C1_X0_N1.dat
+B10_P5_C5_X0_N1.dat
+B10_P5_C10_X0_N1.dat
+B10_P10_C1_X0_N1.dat
+B10_P10_C5_X0_N1.dat
+B10_P10_C10_X0_N1.dat
+B5_P1_C1_X200_N1.dat
+B5_P1_C5_X200_N1.dat
+B5_P5_C1_X200_N1.dat
+B5_P5_C5_X200_N1.dat
+B10_P1_C1_X200_N1.dat
+B10_P1_C5_X200_N1.dat
+B10_P1_C10_X200_N1.dat
+B10_P5_C1_X200_N1.dat
+B10_P5_C5_X200_N1.dat
+B10_P5_C10_X200_N1.dat
+B10_P10_C1_X200_N1.dat
+B10_P10_C5_X200_N1.dat
+B10_P10_C10_X200_N1.dat
+B5_P1_C1_X400_N1.dat
+B5_P1_C5_X400_N1.dat
+B5_P5_C1_X400_N1.dat
+B5_P5_C5_X400_N1.dat
+B10_P1_C1_X400_N1.dat
+B10_P1_C5_X400_N1.dat
+B10_P1_C10_X400_N1.dat
+B10_P5_C1_X400_N1.dat
+B10_P5_C5_X400_N1.dat
+B10_P5_C10_X400_N1.dat
+B10_P10_C1_X400_N1.dat
+B10_P10_C5_X400_N1.dat
+B10_P10_C10_X400_N1.dat
+Program succeeded on all combinations +6
+Grading CSV
+Testing for delay behaviour
+Ratio of ['10', '1', '1', '400', '1']:['10', '1', '1', '200', '1'] is 1.9450560031179789
+Accepted: 1.5-2.5
+correct +2
+
+Ratio of ['5', '1', '1', '400', '1']:['5', '1', '1', '200', '1'] is 1.9436835961116525
+Accepted: 1.5-2.5
+correct +2
+
+Testing for producer bottleneck
+Ratio of ['5', '1', '5', '0', '1']:['5', '1', '1', '0', '1'] is 0.9991829758203921
+Accepted: 0.9-1.1
+correct +2
+
+Ratio of ['10', '1', '5', '200', '1']:['10', '1', '1', '200', '1'] is 0.9998433707686807
+Accepted: 0.9-1.1
+correct +2
+
+Testing for producer acceleration
+Ratio of ['10', '1', '1', '0', '1']:['10', '5', '1', '0', '1'] is 4.9432490544656815
+Accepted: 4-6
+correct +1
+
+Ratio of ['5', '1', '1', '0', '1']:['5', '5', '1', '0', '1'] is 4.93542710192674
+Accepted: 4-6
+correct +1
+
+Ratio of ['10', '5', '1', '0', '1']:['10', '10', '1', '0', '1'] is 1.9546976848091755
+Accepted: 1.5-2.5
+correct +1
+
+Ratio of ['10', '1', '5', '200', '1']:['10', '10', '5', '200', '1'] is 4.657448256105422
+Accepted: 4-6
+correct +1
+
+Testing for consumer acceleration
+Ratio of ['5', '5', '1', '400', '1']:['5', '5', '5', '400', '1'] is 4.7810485078893485
+Accepted: 4-6
+correct +1
+
+Ratio of ['10', '5', '5', '400', '1']:['10', '5', '10', '400', '1'] is 1.714232024079132
+Accepted: 1.5-2.5
+correct +1
+
+Ratio of ['10', '10', '1', '400', '1']:['10', '10', '5', '400', '1'] is 4.77953155524151
+Accepted: 4-6
+correct +1
+
+Ratio of ['10', '1', '1', '400', '1']:['10', '1', '5', '400', '1'] is 1.9071864093072697
+Accepted: 1.5-6
+correct +1
+
+Testing for consumer bottleneck
+Ratio of ['10', '5', '1', '400', '1']:['10', '1', '1', '400', '1'] is 0.9997876660137568
+Accepted: 0.9-1.1
+correct +2
+
+Ratio of ['10', '10', '1', '400', '1']:['10', '1', '1', '400', '1'] is 0.9998282258561733
+Accepted: 0.9-1.1
+correct +2
+
+Testing for bounded buffer effects
+Ratio of ['5', '5', '1', '200', '1']:['5', '1', '1', '200', '1'] is 0.9831339105764573
+Accepted: 0.9-1.1
+correct +2
+
+Ratio of ['10', '10', '5', '200', '1']:['10', '5', '5', '200', '1'] is 0.9819389479125095
+Accepted: 0.9-1.1
+correct +2
+
+Ratio of ['10', '5', '1', '200', '1']:['10', '1', '1', '200', '1'] is 0.9837075811046339
+Accepted: 0.9-1.1
+correct +2
+
+CSV Score: 26/26
+
+Checking for remaining shared memory
+No shared memory left
+correct +5
+
+>> make clean
+No .o found +2
+No .d found
+No executable found +2
+
+########### Score ###########
+
+Makefile score: 10/10
+paster2 single-threaded score: 15/15
+paster2 multi-threaded score:  65/65
+Total lab 3 score:  90/90
+
+########### Additional Comments ###########
